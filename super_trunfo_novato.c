@@ -2,13 +2,13 @@
 
 int main() {
     // Dados da Carta 1
-    char estado1, codigo1[4], nome1[100];
+    char estado1[50], codigo1[4], nome1[100];
     int populacao1;
     float area1, pib1;
     int pontosTuristicos1;
 
     // Dados da Carta 2
-    char estado2, codigo2[4], nome2[100];
+    char estado2[50], codigo2[4], nome2[100];
     int populacao2;
     float area2, pib2;
     int pontosTuristicos2;
@@ -16,7 +16,7 @@ int main() {
     // Entrada da Carta 1
     printf("Cadastro da Carta 1:\n");
     printf("Estado: ");
-    scanf(" %c", &estado1);
+    scanf(" %[^\n]", estado1);
     printf("Código: ");
     scanf(" %3s", codigo1);
     printf("Nome da cidade: ");
@@ -33,7 +33,7 @@ int main() {
     // Entrada da Carta 2
     printf("\nCadastro da Carta 2:\n");
     printf("Estado: ");
-    scanf(" %c", &estado2);
+    scanf(" %[^\n]", estado2);
     printf("Código: ");
     scanf(" %3s", codigo2);
     printf("Nome da cidade: ");
@@ -49,12 +49,14 @@ int main() {
 
     // Exibição dos dados
     printf("\nCarta 1:\n");
-    printf("Cidade: %s | Estado: %c | Código: %s\n", nome1, estado1, codigo1);
-    printf("População: %d | Área: %.2f | PIB: %.2f | Pontos turísticos: %d\n", populacao1, area1, pib1, pontosTuristicos1);
+    printf("Cidade: %s | Estado: %s | Código: %s\n", nome1, estado1, codigo1);
+    printf("População: %d | Área: %.2f | PIB: %.2f | Pontos turísticos: %d\n",
+           populacao1, area1, pib1, pontosTuristicos1);
 
     printf("\nCarta 2:\n");
-    printf("Cidade: %s | Estado: %c | Código: %s\n", nome2, estado2, codigo2);
-    printf("População: %d | Área: %.2f | PIB: %.2f | Pontos turísticos: %d\n", populacao2, area2, pib2, pontosTuristicos2);
+    printf("Cidade: %s | Estado: %s | Código: %s\n", nome2, estado2, codigo2);
+    printf("População: %d | Área: %.2f | PIB: %.2f | Pontos turísticos: %d\n",
+           populacao2, area2, pib2, pontosTuristicos2);
 
     // Comparação: População
     printf("\nResultado da comparação (População):\n");
@@ -68,3 +70,4 @@ int main() {
 
     return 0;
 }
+
